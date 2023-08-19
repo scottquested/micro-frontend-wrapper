@@ -1,0 +1,34 @@
+{
+  "name": "@scottquested/micro-frontend-wrapper",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install:repos": "./scripts/git-clone.sh",
+    "===================": "",
+    "container:install": "npm --prefix ./micro-frontend-container/ install",
+    "components:install": "npm --prefix ./micro-frontend-components/ install",
+    "app1:install": "npm --prefix ./micro-frontend-app-1/ install",
+    "app2:install": "npm --prefix ./micro-frontend-app-2/ install",
+    "=========================================================================": "",
+    "components:types": "npm --prefix ./micro-frontend-components/ run gen-types",
+    "app1:types": "npm --prefix ./micro-frontend-app-1/ run gen-types",
+    "app2:types": "npm --prefix ./micro-frontend-app-2/ run gen-types",
+    "=============================================================================": "",
+    "container:wait": "wait-on http://localhost:3001 && wait-on http://localhost:3002 && wait-on http://localhost:3003",
+    "container:start": "npm run container:wait && npm --prefix ./micro-frontend-container/ start",
+    "components:start": "npm --prefix ./micro-frontend-components/ start",
+    "app1:start": "wait-on http://localhost:3001 && npm --prefix ./micro-frontend-app-1/ start",
+    "app2:start": "wait-on http://localhost:3001 && npm --prefix ./micro-frontend-app-2/ start",
+    "===================================================================================================================": "",
+    "install:all": "concurrently \"npm run components:install\" \"npm run app1:install\" \"npm run app2:install\" \"npm run container:install\"",
+    "gen-types:all": "concurrently \"npm run components:types\" \"npm run app1:types\" \"npm run app2:types\"",
+    "start:all": "concurrently \"npm run components:start\" \"npm run app1:start\" \"npm run app2:start\" \"npm run container:start\""
+  },
+  "author": "Scott Quested",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.5.0",
+    "wait-on": "^6.0.1"
+  }
+}

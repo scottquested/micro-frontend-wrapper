@@ -1,0 +1,4 @@
+https://github.com/scottquested/micro-frontend-components
+https://github.com/scottquested/micro-frontend-container
+https://github.com/scottquested/micro-frontend-app-1
+https://github.com/scottquested/micro-frontend-app-2

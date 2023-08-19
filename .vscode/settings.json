@@ -1,0 +1,14 @@
+{
+  "eslint.workingDirectories": [
+    "micro-frontend-components",
+    "micro-frontend-container",
+    "micro-frontend-app-1",
+    "micro-frontend-app-2"
+  ],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  }
+}
