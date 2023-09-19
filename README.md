@@ -35,5 +35,5 @@ npm run start:all
 ## Open browser
 
 ```
-http://localhost:9860/
+http://localhost:3000/
 ```
